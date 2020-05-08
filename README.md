@@ -13,3 +13,9 @@
 4. array and matrix
 
 5. softmax
+
+6. MNIST
+
+7. neuralnet_MNIST
+
+8. neuralnet_MNIST_batch
