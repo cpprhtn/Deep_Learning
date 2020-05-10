@@ -19,3 +19,5 @@
 7. neuralnet_MNIST
 
 8. neuralnet_MNIST_batch
+
+9. mean_squared_error
