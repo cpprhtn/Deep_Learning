@@ -21,3 +21,7 @@
 8. neuralnet_MNIST_batch
 
 9. mean_squared_error
+
+10. cross_entropy_error
+
+11. mini_batch
