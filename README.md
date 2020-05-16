@@ -25,3 +25,7 @@
 10. cross_entropy_error
 
 11. mini_batch
+
+12. numerical_differential
+
+13. partial_differential
