@@ -53,7 +53,7 @@ numerical_diff(function_1, 10)
 #Out: 0.2999999999986347
 
 
-#미분값 시각
+#미분값 시각화
 def tangent_line(f, x):
     d = numerical_diff(f, x)
     print(d)
