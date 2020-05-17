@@ -29,3 +29,5 @@
 12. numerical_differential
 
 13. partial_differential
+
+14. gradient
