@@ -33,3 +33,5 @@
 14. gradient
 
 15. gradient_descent
+
+16. gradient_simplenet
