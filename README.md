@@ -35,3 +35,7 @@
 15. gradient_descent
 
 16. gradient_simplenet
+
+17. two_layer_net
+
+18. train_neuralnet
