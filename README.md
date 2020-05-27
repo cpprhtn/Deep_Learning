@@ -47,3 +47,7 @@
 21. layer_naive_Add
 
 22. Layers
+
+23. two_layer_net(backpropagation)
+
+24. gradient_check
