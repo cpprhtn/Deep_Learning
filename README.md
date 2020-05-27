@@ -43,3 +43,5 @@
 19. backpropagation
 
 20. layer_naive_Multiply
+
+21. layer_naive_Add
