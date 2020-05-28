@@ -51,3 +51,5 @@
 23. two_layer_net(backpropagation)
 
 24. gradient_check
+
+25. train_neuralnet(backpropagation)
