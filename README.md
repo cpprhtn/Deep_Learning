@@ -53,3 +53,9 @@
 24. gradient_check
 
 25. train_neuralnet(backpropagation)
+
+26. Momentum
+
+27. AdaGrad
+
+28. Adam
