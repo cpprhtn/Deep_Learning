@@ -36,20 +36,23 @@ for i in range(hidden_layer_size):
     if i != 0:
         x = activations[i-1]
 
-    # 초깃값을 다양하게 바꿔가며 실험해보자！
+    # 초깃값
+        #정규분포
     #w = np.random.randn(node_num, node_num) * 1
-    #w = np.random.randn(node_num, node_num) * 0.01
-    w = np.random.randn(node_num, node_num) * np.sqrt(1.0 / node_num)
-    # w = np.random.randn(node_num, node_num) * np.sqrt(2.0 / node_num)
+    w = np.random.randn(node_num, node_num) * 0.01
+        #사비에르 초깃값
+    #w = np.random.randn(node_num, node_num) * np.sqrt(1.0 / node_num)
+        #He 초깃값
+    #w = np.random.randn(node_num, node_num) * np.sqrt(2.0 / node_num)
 
 
     a = np.dot(x, w)
 
 
-    # 활성화 함수도 바꿔가며 실험해보자！
-    z = sigmoid(a)
-    # z = ReLU(a)
-    # z = tanh(a)
+    # 활성화 함수
+    #z = sigmoid(a)
+    z = ReLU(a)
+    #z = tanh(a)
 
     activations[i] = z
 
@@ -68,4 +71,10 @@ plt.show()
 표준편차를 0.01로 한 정규분포는 가운데로 치우침
 표준편차를 1로 한 정규분포는 끝으로 치우침
 사비에르 초깃값을 사용할 경우 각 층에 흐르는 데이터의 양이 적당
+'''
+
+
+'''
+활성화 함수로 ReLU를 사용할 때는 He 초깃값을,
+sigmoid나 tanh 등의 S자 곡선일 때는 Xavier 초깃값을 쓰는것이 낫다
 '''
