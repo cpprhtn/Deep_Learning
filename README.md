@@ -59,3 +59,5 @@
 27. AdaGrad
 
 28. Adam
+
+29. optimizer_compare_mnist
