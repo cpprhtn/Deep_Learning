@@ -61,3 +61,5 @@
 28. Adam
 
 29. optimizer_compare_mnist
+
+30. weight_init_activation_histogram
