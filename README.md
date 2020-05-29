@@ -63,3 +63,5 @@
 29. optimizer_compare_mnist
 
 30. weight_init_activation_histogram
+
+31. weight_init_compare
