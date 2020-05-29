@@ -56,7 +56,6 @@ for i in range(hidden_layer_size):
 
     activations[i] = z
 
-# 히스토그램 그리기
 for i, a in activations.items():
     plt.subplot(1, len(activations), i+1)
     plt.title(str(i+1) + "-layer")

@@ -1,23 +1,25 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Fri May 29 19:37:17 2020
+Created on Fri May 29 23:07:43 2020
 
 @author: cpprhtn
 """
 
 
 '''
-MNIST 데이터셋으로 본 갱신 방법 비교
+MNIST 데이터셋으로 본 가중치 초깃값 비교
 '''
 import os
 import sys
+
 sys.path.append(os.pardir)  # 부모 디렉터리의 파일을 가져올 수 있도록 설정
+import numpy as np
 import matplotlib.pyplot as plt
 from dataset.mnist import load_mnist
 from common.util import smooth_curve
 from common.multi_layer_net import MultiLayerNet
-from common.optimizer import *
+from common.optimizer import SGD
 
 
 (x_train, t_train), (x_test, t_test) = load_mnist(normalize=True)
@@ -27,20 +29,15 @@ batch_size = 128
 max_iterations = 2000
 
 
-optimizers = {}
-optimizers['SGD'] = SGD()
-optimizers['Momentum'] = Momentum()
-optimizers['AdaGrad'] = AdaGrad()
-optimizers['Adam'] = Adam()
-#optimizers['RMSprop'] = RMSprop()
+weight_init_types = {'std=0.01': 0.01, 'Xavier': 'sigmoid', 'He': 'relu'}
+optimizer = SGD(lr=0.01)
 
 networks = {}
 train_loss = {}
-for key in optimizers.keys():
-    networks[key] = MultiLayerNet(
-        input_size=784, hidden_size_list=[100, 100, 100, 100],
-        output_size=10)
-    train_loss[key] = []    
+for key, weight_type in weight_init_types.items():
+    networks[key] = MultiLayerNet(input_size=784, hidden_size_list=[100, 100, 100, 100],
+                                  output_size=10, weight_init_std=weight_type)
+    train_loss[key] = []
 
 
 for i in range(max_iterations):
@@ -48,31 +45,26 @@ for i in range(max_iterations):
     x_batch = x_train[batch_mask]
     t_batch = t_train[batch_mask]
     
-    for key in optimizers.keys():
+    for key in weight_init_types.keys():
         grads = networks[key].gradient(x_batch, t_batch)
-        optimizers[key].update(networks[key].params, grads)
+        optimizer.update(networks[key].params, grads)
     
         loss = networks[key].loss(x_batch, t_batch)
         train_loss[key].append(loss)
     
     if i % 100 == 0:
-        print( "===========" + "iteration:" + str(i) + "===========")
-        for key in optimizers.keys():
+        print("===========" + "iteration:" + str(i) + "===========")
+        for key in weight_init_types.keys():
             loss = networks[key].loss(x_batch, t_batch)
             print(key + ":" + str(loss))
 
 
-markers = {"SGD": "o", "Momentum": "x", "AdaGrad": "s", "Adam": "D"}
+markers = {'std=0.01': 'o', 'Xavier': 's', 'He': 'D'}
 x = np.arange(max_iterations)
-for key in optimizers.keys():
+for key in weight_init_types.keys():
     plt.plot(x, smooth_curve(train_loss[key]), marker=markers[key], markevery=100, label=key)
 plt.xlabel("iterations")
 plt.ylabel("loss")
-plt.ylim(0, 1)
+plt.ylim(0, 2.5)
 plt.legend()
 plt.show()
-
-
-'''
-SGD가 가장느리며 AdaGrad가 가장 학습이 빠르다
-'''
