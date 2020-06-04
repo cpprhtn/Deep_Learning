@@ -100,7 +100,7 @@ for i, w in enumerate(weight_scale_list):
 plt.show()
 
 
-
+n
 '''
 거의 모든 경우에서 배치 정규화를 사용할 때의 학습 진도가 빠름
 '''
