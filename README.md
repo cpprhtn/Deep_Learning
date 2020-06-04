@@ -65,3 +65,7 @@
 30. weight_init_activation_histogram
 
 31. weight_init_compare
+
+32. batch_norm_test
+
+33. overfit_weight_decay
