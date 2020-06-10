@@ -69,3 +69,7 @@
 32. batch_norm_test
 
 33. overfit_weight_decay
+
+34. overfit_dropout
+
+35. hyperparameter_optimization
