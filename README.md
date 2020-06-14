@@ -75,3 +75,5 @@
 35. hyperparameter_optimization
 
 36. util
+
+37. simple_convnet
