@@ -79,3 +79,5 @@
 37. simple_convnet
 
 38. train_convnet
+
+39. gradient_check
