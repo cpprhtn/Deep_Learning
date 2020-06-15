@@ -77,3 +77,5 @@
 36. util
 
 37. simple_convnet
+
+38. train_convnet
