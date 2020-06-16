@@ -80,4 +80,8 @@
 
 38. train_convnet
 
-39. gradient_check
+39. gradient_check2
+
+40. visualize_filter
+
+41. apply_filter
