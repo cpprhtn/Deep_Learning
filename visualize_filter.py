@@ -7,6 +7,10 @@ Created on Mon Jun 15 21:11:48 2020
 """
 
 
+'''
+1번째 층의 가중치 시각화
+'''
+
 import numpy as np
 import matplotlib.pyplot as plt
 from simple_convnet import SimpleConvNet
@@ -34,3 +38,10 @@ filter_show(network.params['W1'])
 # 학습된 가중치
 network.load_params("params.pkl")
 filter_show(network.params['W1'])
+
+'''
+학습전 필터는 무직위었으나
+학습후 규칙을 가지게 됨
+
+에지와 블롭에 반응한다
+'''
