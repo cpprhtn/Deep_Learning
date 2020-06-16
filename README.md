@@ -82,6 +82,6 @@
 
 39. gradient_check2
 
-40. visualize_filter
+40. apply_filter
 
-41. apply_filter
+41. visualize_filter
