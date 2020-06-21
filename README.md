@@ -85,3 +85,5 @@
 40. apply_filter
 
 41. visualize_filter
+
+42. half_float_network
