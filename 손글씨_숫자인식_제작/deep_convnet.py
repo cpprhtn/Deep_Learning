@@ -22,14 +22,15 @@ from collections import OrderedDict
 from common.layers import *
 
 
-"""정확도 99% 이상의 고정밀 합성곱 신경망
+"""
+정확도 99% 이상의 고정밀 합성곱 신경망
 
-    네트워크 구성
-        conv - relu - conv- relu - pool -
-        conv - relu - conv- relu - pool -
-        conv - relu - conv- relu - pool -
-        affine - relu - dropout - affine - dropout - softmax
-    """
+네트워크 구성
+    conv - relu - conv- relu - pool -
+    conv - relu - conv- relu - pool -
+    conv - relu - conv- relu - pool -
+    affine - relu - dropout - affine - dropout - softmax
+"""
 class DeepConvNet:
     def __init__(self, input_dim=(1, 28, 28),
                  conv_param_1 = {'filter_num':16, 'filter_size':3, 'pad':1, 'stride':1},
