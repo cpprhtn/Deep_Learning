@@ -92,14 +92,14 @@ __________________________________________
 
 *심층 신경망을 만들어 MNIST 데이터셋의 손글씨 숫자 인식해보기*
 
-**deep_convnet - 신경망 구현** <br>
+## **deep_convnet - 신경망 구현** <br>
 <li> 가중치 초깃값 : He 초깃값</li>
 <li> 가중치 매개변수 : Adam</li>
 <li> 활성화 함수 : ReLU</li>
 <li> 3 * 3의 작은 필터를 사용한 합성곱 계층</li>
 
-
-**train_deepnet - 훈련 데이터**
+<br>
+## **train_deepnet - 훈련 데이터**
 
 **deep_conv_net_params.pkl - 학습된 가중치 매개변수**
 
