@@ -2,6 +2,8 @@
 
 ## O.Reilly의 **밑바닥부터 시작하는 딥러닝** 책을 읽으며 공부
 
+### 학습 순서
+
 0. Perseptron
 
 1. neural network
